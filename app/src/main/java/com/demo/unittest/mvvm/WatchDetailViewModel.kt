@@ -46,6 +46,7 @@ class WatchDetailViewModel(private val repo: WatchDetailActivityRepo?) : ViewMod
         _priceLoading.value = true
         repo?.loadWatchInfo(object : ICallback<Int> {
             override fun onResult(result: Int) {
+                System.out.println("inner result = $result")
                 _priceLoading.postValue(false)
                 if (!checkPrice(result)) {
                     _toastData.postValue("Error Price")

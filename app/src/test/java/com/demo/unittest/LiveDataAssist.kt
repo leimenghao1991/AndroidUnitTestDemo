@@ -19,7 +19,7 @@ fun <T> getValue(liveData: LiveData<T>): T {
         }
     }
     liveData.observeForever(observer)
-    latch.await(6, TimeUnit.SECONDS)
+    latch.await(1, TimeUnit.SECONDS)
 
     return data[0] as T
 }

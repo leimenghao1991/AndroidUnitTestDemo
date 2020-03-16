@@ -20,7 +20,7 @@ class WatchDetailActivityRepo {
     }
 
     fun loadWatchInfo(callback: ICallback<Int>) {
-        val randomDelay = Random.nextInt(5)
+        val randomDelay = Random.nextInt(2)
         mHandler.postDelayed({
             callback.onResult(Random.nextInt(MIN_PRICE, MAX_PRICE))
         }, randomDelay * 1000L)
